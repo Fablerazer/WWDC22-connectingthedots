@@ -12,9 +12,10 @@ struct StoryPageView: View {
                     Text("My Story")
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .padding(.bottom, 10)
+                        .padding(.bottom, 20)
+                    
+                    // MARK: - Choices Methods
                     Text(story[pageIndex].text)
-
                 }
                 ForEach(story[pageIndex].choices, id: \Choice.text) { choice in
                     NavigationLink(destination: StoryPageView(story: story, pageIndex: choice.destination)) {
@@ -28,6 +29,7 @@ struct StoryPageView: View {
                     }
                 }
             }
+        // MARK: - Navigation Titles
         .padding()
         .navigationTitle("Page \(pageIndex + 1)")
         .navigationBarTitleDisplayMode(.inline)
