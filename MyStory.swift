@@ -18,7 +18,7 @@ let story = Story(pages: [
         
         Hello, Faizal Here!
         
-        Recently, My bestie had a trouble with his life, his focus and his studies
+        Recently, My bestie had a trouble in his life, his focus and his studies
         
         Previously I had the same problem as he is
         
