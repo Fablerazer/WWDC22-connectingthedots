@@ -10,7 +10,7 @@
 import Foundation
 import SwiftUI
 
-struct DesignView: View {
+struct ReDesignView: View {
   @State private var userIsInTheMiddleOfTyping = false
   @State private var display = "0"
 
@@ -94,8 +94,8 @@ struct DesignView: View {
     }
 }
 
-struct DesignView_Previews: PreviewProvider {
+struct ReDesignView_Previews: PreviewProvider {
     static var previews: some View {
-        DesignView()
+        ReDesignView()
     }
 }
