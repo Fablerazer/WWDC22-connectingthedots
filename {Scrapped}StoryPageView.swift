@@ -13,9 +13,8 @@ struct StoryPageView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding(.bottom, 20)
-                    
-                    // MARK: - Choices Methods
                     Text(story[pageIndex].text)
+                    // MARK: - Choices Methods
                 }
                 ForEach(story[pageIndex].choices, id: \Choice.text) { choice in
                     NavigationLink(destination: StoryPageView(story: story, pageIndex: choice.destination)) {

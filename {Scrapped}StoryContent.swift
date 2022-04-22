@@ -70,3 +70,9 @@ let story = Story(pages: [
         choices: []
     )
 ])
+
+struct Previews_StoryContent_LibraryContent: LibraryContentProvider {
+    var views: [LibraryItem] {
+        LibraryItem(/*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/)
+    }
+}

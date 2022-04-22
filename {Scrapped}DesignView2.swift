@@ -10,7 +10,7 @@
 import Foundation
 import SwiftUI
 
-struct ContentView: View {
+struct ContView: View {
     let columnLayout = Array(repeating: GridItem(), count: 5)
 
     @State private var selectedColor = Color.gray
@@ -56,9 +56,9 @@ struct ContentView: View {
         }
         .padding(10)
     }
-    struct ContentView_Previews: PreviewProvider {
+    struct ContView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            ContView()
         }
     }
 }

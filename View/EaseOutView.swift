@@ -20,12 +20,12 @@ struct EaseOutView: View {
                 .foregroundColor(.black)
                 .padding(4)
             
-            Image("ui")
+            Image("MainCharacter")
                 .frame(width: show ? 414 : 300, height: show ? 600 : 300)
                 .clipped()
                 .cornerRadius(show ? 0 : 30)
                 .shadow(radius: 30)
-                .blur(radius: show ? 0 : 30)
+//                .blur(radius: show ? 0 : 30)
                 .animation(Animation.spring(), value: show)
                 .aspectRatio(contentMode: .fill)
             
