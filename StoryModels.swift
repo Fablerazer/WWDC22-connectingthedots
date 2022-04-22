@@ -18,7 +18,6 @@ struct Story {
 
 struct StoryPage {
     let text: String
-    
     let choices: [Choice]
     
     init(_ text: String, choices: [Choice]) {
