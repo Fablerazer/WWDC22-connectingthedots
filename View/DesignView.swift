@@ -71,10 +71,10 @@ struct DesignView: View {
 
     var body: some View {
         VStack {
-            Text("Create your own logo!")
+            Text("Create your own design!")
                 .font(.title)
                 .padding(.top)
-            Text("1. Use one finger to drag the shape around\n2. Tap the button to randomly change it's colors and size")
+            Text("1. Use one finger to drag the shape around\n2. Tap the button to randomly change it's colors(purple & yellow) and size <-> shape(red)")
                 .font(.callout)
                 .padding(10)
             Spacer()
@@ -104,7 +104,7 @@ struct DesignView: View {
                 .gesture(tapGesture1)
             
                 RoundedRectangle(cornerRadius: 5)
-                .foregroundColor(.yellow)
+                .foregroundColor(.purple)
                 .frame(width: 125/2, height: 65/2)
                 .gesture(tapGesture2)
             }
@@ -112,7 +112,7 @@ struct DesignView: View {
             HStack{
                 Text("Shape: ")
                 RoundedRectangle(cornerRadius: 5)
-                .foregroundColor(.yellow)
+                .foregroundColor(.red)
                 .frame(width: 125/2, height: 65/2)
                 .gesture(tapGesture3)
             }

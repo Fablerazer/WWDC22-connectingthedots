@@ -22,23 +22,32 @@ struct StoryView: View {
                         Text(screen.title)
                             .font(.largeTitle.bold())
                             .foregroundColor(.white)
+                            .padding(.top,80)
+                        
+                        Text(screen.chapter)
+                            .font(.title.bold())
+                            .underline(true, color: .orange)
+                            .foregroundColor(.white)
                         
                         Image(screen.image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: getScreenBounds().width - 100*2, height: getScreenBounds().width - 100*2)
+                            .frame(width: getScreenBounds().width - 100*2, height: getScreenBounds().width - 100*5)
                             // small screen adoption...
-                            .scaleEffect(getScreenBounds().height < 750 ? 0.9 : 1)
-                            .offset(y: getScreenBounds().height < 750 ? -100 : +20)
+                            .scaleEffect(getScreenBounds().height < 750 ? 0.8 : 1)
+                            .scaleEffect(getScreenBounds().height > 1200 ? 0.5 : 1)
+                            .offset(y: getScreenBounds().height < 750 ? +10 : +20)
                         
-                        VStack(alignment: .leading, spacing: 12){
+                        VStack(alignment: .center, spacing: 12){
                         
                             Text(screen.description)
+                                .font(.system(Font.TextStyle.title, design: .rounded))
                                 .fontWeight(.semibold)
                                 .foregroundColor(.black)
-                                .padding(.top,20)
+                                .multilineTextAlignment(.center)
+                                .padding(EdgeInsets(top: 0, leading: 80, bottom: 70, trailing: 80))
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .padding()
                     .frame(width: getScreenBounds().width)
