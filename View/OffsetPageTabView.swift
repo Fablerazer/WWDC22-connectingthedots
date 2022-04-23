@@ -30,6 +30,9 @@ struct OffsetPageTabView<Content: View>: UIViewRepresentable {
         let hostview = UIHostingController(rootView: content)
         hostview.view.translatesAutoresizingMaskIntoConstraints = false
         
+        // Clearing BG...
+        hostview.view.backgroundColor = .clear
+        
         let constraints = [
             
             hostview.view.topAnchor.constraint(equalTo: scrollview.topAnchor),

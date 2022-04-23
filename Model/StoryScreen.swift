@@ -50,9 +50,9 @@ let description = """
         
         """
 
-var storyScreen: [StoryScreen] = [
-    StoryScreen(image: "screen1", title: title, description: description),
-    StoryScreen(image: "screen2", title: title, description: description),
-    StoryScreen(image: "screen3", title: title, description: description),
-    StoryScreen(image: "screen4", title: title, description: description),
+var storyScreens: [StoryScreen] = [
+    StoryScreen(image: "MainCharacter", title: title, description: description),
+    StoryScreen(image: "automobile", title: title, description: description),
+    StoryScreen(image: "racing-car", title: title, description: description),
+    StoryScreen(image: "sportutility", title: title, description: description),
 ]
