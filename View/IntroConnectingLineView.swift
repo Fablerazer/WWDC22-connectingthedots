@@ -23,6 +23,9 @@ struct IntroConnectingLine: View {
     @State var lineStart = CGPoint.zero
     @State var lineEnd = CGPoint.zero
     
+    @State var showNavigation: Bool = false
+    @State var showReading: Bool = true
+    
     var lineDrawingGesture: some Gesture {
         DragGesture()
             .onChanged { value in
@@ -114,16 +117,30 @@ struct IntroConnectingLine: View {
                         .foregroundColor(.black)
                         .padding(.top,500)
                     
-                    NavigationLink(destination: StoryView(level: 2)) {
-                        Text("Start")
-                            .font(.title2.bold())
-                            .foregroundColor(.white)
-                            .padding(.vertical, 20)
-                            .frame(width: 200)
-                            .background(Color.black,in:
-                                            RoundedRectangle(cornerRadius: 12))
+                    if showNavigation == false {
+                        
+                        Button("Done Drawing?"){
+                            showNavigation.toggle()
+                            showReading.toggle()
+                        }
+                        .font(.title2.bold())
+                        .padding()
                     }
-                    .padding(.top, 35)
+                    
+                    if showNavigation == true {
+                        
+                        NavigationLink(destination: StoryView(level: 2)) {
+                            Text("Start")
+                                .font(.title2.bold())
+                                .foregroundColor(.white)
+                                .padding(.vertical, 20)
+                                .frame(width: 200)
+                                .background(Color.black,in:
+                                                RoundedRectangle(cornerRadius: 12))
+                        }
+                        
+                        .padding(.top, 35)
+                    }
                 }
                     .padding(.bottom,100)
                 ,alignment: .bottom

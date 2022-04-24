@@ -55,6 +55,20 @@ struct ConnectingLine: View {
                     lines[index].points.append(newPoint)
                 }
             }))
+            ZStack(){
+                // Game1 Button...
+                NavigationLink(destination: StoryView2(level: 4), label:{
+                    Text("Next Page")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.blue)
+                        .padding(.vertical, 20)
+                        .frame(width: 215)
+                        .background(Color.white,in:
+                                        RoundedRectangle(cornerRadius: 12))
+                    
+                })
+            }
+            .offset(y:-200)
         }
         .overlay(
             Button(action:{ lines = [Line]() }){
@@ -64,6 +78,8 @@ struct ConnectingLine: View {
                 .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 50))
             ,alignment: .topTrailing
         )
+        
+        
         
     }
 }
