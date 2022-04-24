@@ -14,12 +14,21 @@ struct StoryView2: View {
     let level:Int
     
     @State var offset: CGFloat = 0
-    @State var show = false
+    @State var showNavigation: Bool = false
+    @State var showReading: Bool = true
+
     
     var body: some View {
         
         // Custom View
         OffsetPageTabView(offset: $offset) {
+            
+            // Show Navigation Button
+//            if getIndex() == 7 {
+//                showNavigation == true
+//            } else {
+//                showNavigation == false
+//            }
             
             HStack(spacing: 0){
                 
@@ -93,38 +102,34 @@ struct StoryView2: View {
             VStack{
                 
                 // Bottom Content...
-                
-                
-                HStack(spacing: 25){
-                    // Game1 Button...
-                    NavigationLink(destination: ConnectingLine(level: 3), label:{
-                        Text("Next Page")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.blue)
-                            .padding(.vertical, 20)
-                            .frame(width: 215)
-                            .background(Color.white,in:
-                                            RoundedRectangle(cornerRadius: 12))
+                    HStack(spacing: 25){
                         
-                    })
-                    
-                    
-                    // Game2 Button...
-                    //                    Button{
-                    //
-                    //                    } label: {
-                    //                        Text("Game 2")
-                    //                            .fontWeight(.semibold)
-                    //                            .foregroundColor(.black)
-                    //                            .offset(x: -5)
-                    //                            .padding(.vertical,20)
-                    //                            .frame(maxWidth: .infinity)
-                    //                            .background(Color.white,in:
-                    //                                RoundedRectangle(cornerRadius: 12))
-                    //                    }
-                    
-                }
-                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                        if showNavigation == false {
+                            
+                            Button("Done Swiping?"){
+                                showNavigation.toggle()
+                                showReading.toggle()
+                            }
+                            .font(.title2.bold())
+                        }
+                        // Game1 Button...
+                        if showNavigation == true {
+
+                            NavigationLink(destination: ConnectingLine(level: 3), label:{
+                                Text("Next Page")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 20)
+                                    .frame(width: 215)
+                                    .background(Color.black,in:
+                                                    RoundedRectangle(cornerRadius: 12))
+                                
+                            })
+                        }
+                    }
+//                    .navigationBarHidden(getIndex() == 7)
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                
                 
                 HStack{
                     
@@ -162,10 +167,11 @@ struct StoryView2: View {
                             .foregroundColor(.blue)
                     }
                 }
-                .padding(.top,30)
+                .padding(.top,20)
                 .padding(.horizontal,28)
             }
                 .padding(.top,20)
+                .padding(.bottom,5)
             ,alignment: .bottom
         )
     }

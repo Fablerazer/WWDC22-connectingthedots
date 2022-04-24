@@ -46,54 +46,84 @@ struct IntroConnectingLine: View {
                     .foregroundColor(.black)
                     .padding(.top,60)
                 
-                Text("Compose your canvas with simple Shapes!")
+                Text("How zooming out through your past\ncan define who you are right now")
+                    .multilineTextAlignment(.center)
                     .font(.title.bold())
                     .foregroundColor(.black)
                     .padding(.top,5)
                 
                 ZStack{
+                    
+                    // First Circle
                     Circle()
                         .inset(by: 10)
-                        .stroke(Color.orange, lineWidth: 5)
+                        .stroke(Color("circle1"), lineWidth: 5)
                         .frame(width: 50, height: 50)
-                        .offset(x:-250, y:340)
+                        .offset(x:-250, y:240)
                     
                     Text("Start")
                         .font(.title.bold())
                         .foregroundColor(.black)
                         .padding(.top,5)
-                        .offset(x:-250, y:380)
+                        .offset(x:-250, y:280)
                     
                     Circle()
                         .inset(by: 10)
-                        .stroke(Color.orange, lineWidth: 5)
+                        .stroke(Color("circle1"), lineWidth: 5)
                         .frame(width: 25, height: 25)
-                        .offset(x:-250, y:340)
+                        .offset(x:-250, y:240)
+                    
+                    // Second Circle
+                    Circle()
+                        .inset(by: 10)
+                        .stroke(Color("circle2"), lineWidth: 5)
+                        .frame(width: 50, height: 50)
+                        .offset(x:-80, y:240)
                     
                     Circle()
                         .inset(by: 10)
-                        .stroke(Color.blue, lineWidth: 5)
+                        .stroke(Color("circle2"), lineWidth: 5)
+                        .frame(width: 25, height: 25)
+                        .offset(x:-80, y:240)
+                    
+                    // Third Circle
+                    Circle()
+                        .inset(by: 10)
+                        .stroke(Color("circle3"), lineWidth: 5)
                         .frame(width: 50, height: 50)
-                        .offset(x:250, y:340)
+                        .offset(x:+80, y:240)
+                    
+                    Circle()
+                        .inset(by: 10)
+                        .stroke(Color("circle3"), lineWidth: 5)
+                        .frame(width: 25, height: 25)
+                        .offset(x:+80, y:240)
+                    
+                    // Forth Circle
+                    Circle()
+                        .inset(by: 10)
+                        .stroke(Color("circle4"), lineWidth: 5)
+                        .frame(width: 50, height: 50)
+                        .offset(x:250, y:240)
                     
                     Text("End")
                         .font(.title.bold())
                         .foregroundColor(.black)
                         .padding(.top,5)
-                        .offset(x:250, y:380)
+                        .offset(x:250, y:280)
                     
                     Circle()
                         .inset(by: 10)
-                        .stroke(Color.blue, lineWidth: 5)
+                        .stroke(Color("circle4"), lineWidth: 5)
                         .frame(width: 25, height: 25)
-                        .offset(x:250, y:340)
+                        .offset(x:250, y:240)
                 }
                 
                 Path { path in
                     path.move(to: lineStart)
                     path.addLine(to: lineEnd)
                 }
-                .stroke(Color.orange, lineWidth: 8.0)
+                .stroke(Color.black, lineWidth: 8.0)
                 .contentShape(RoundedRectangle(cornerRadius: 12))
                 .gesture(lineDrawingGesture)
             }
@@ -112,7 +142,8 @@ struct IntroConnectingLine: View {
             )
             .overlay(
                 VStack{
-                    Text("You can create a line by dragging your finger on the screen")
+                    Text("You can create a line by dragging your finger\non the screen")
+                        .multilineTextAlignment(.center)
                         .font(.title.bold())
                         .foregroundColor(.black)
                         .padding(.top,500)
@@ -142,7 +173,7 @@ struct IntroConnectingLine: View {
                         .padding(.top, 35)
                     }
                 }
-                    .padding(.bottom,100)
+                    .padding(.bottom,45)
                 ,alignment: .bottom
             )
         }

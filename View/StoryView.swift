@@ -95,7 +95,7 @@ struct StoryView: View {
         )
         
         
-        // Ignoring SafeArea for Animation
+        // Ignoring SafeArea for Animation...
         .ignoresSafeArea(.container, edges: .all)
         .overlay(
             
@@ -106,13 +106,13 @@ struct StoryView: View {
                         
                         if showNavigation == false {
                             
-                            Button("Done Reading?"){
+                            Button("Done Swiping?"){
                                 showNavigation.toggle()
                                 showReading.toggle()
                             }
                             .font(.title2.bold())
                         }
-                        // Game1 Button...
+                        // NavigationLink...
                         if showNavigation == true {
 
                             NavigationLink(destination: ConnectingLine(level: 3), label:{
@@ -167,10 +167,11 @@ struct StoryView: View {
                             .foregroundColor(.blue)
                     }
                 }
-                .padding(.top,30)
+                .padding(.top,20)
                 .padding(.horizontal,28)
             }
                 .padding(.top,20)
+                .padding(.bottom,5)
             ,alignment: .bottom
         )
     }

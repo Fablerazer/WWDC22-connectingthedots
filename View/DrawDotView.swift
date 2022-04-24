@@ -26,6 +26,9 @@ struct ConnectingLine: View {
     @State private var selectedColor: Color = .black
     @State private var selectedLineWidth: CGFloat = 1
     
+    @State var showNavigation: Bool = false
+    @State var showReading: Bool = true
+    
     var body: some View {
         VStack {
             
@@ -57,26 +60,40 @@ struct ConnectingLine: View {
             }))
             ZStack(){
                 // Game1 Button...
-                NavigationLink(destination: StoryView2(level: 4), label:{
-                    Text("Next Page")
-                        .fontWeight(.semibold)
-                        .foregroundColor(.blue)
-                        .padding(.vertical, 20)
-                        .frame(width: 215)
-                        .background(Color.white,in:
-                                        RoundedRectangle(cornerRadius: 12))
+                if showNavigation == false {
                     
-                })
+                    Button("Done Drawing?"){
+                        showNavigation.toggle()
+                        showReading.toggle()
+                    }
+                    .font(.title2.bold())
+                    .padding()
+                }
+                
+                if showNavigation == true {
+                    
+                    NavigationLink(destination: StoryView2(level: 4)) {
+                        Text("Next Page")
+                            .font(.title2.bold())
+                            .foregroundColor(.white)
+                            .padding(.vertical, 20)
+                            .frame(width: 200)
+                            .background(Color.black,in:
+                                            RoundedRectangle(cornerRadius: 12))
+                    }
+                    .padding(.top, 35)
+                }
             }
-            .offset(y:-200)
+            .offset(y:-100)
         }
         .overlay(
             Button(action:{ lines = [Line]() }){
-                Text("Reset")
+                Text("Reset Drawing")
                     .font(.title)
+                    .foregroundColor(.red)
             }
-                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 50))
-            ,alignment: .topTrailing
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 25, trailing: 0))
+            ,alignment: .bottom
         )
         
         
