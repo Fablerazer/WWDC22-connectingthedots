@@ -3,7 +3,7 @@
 //  WWDC2022 FaizalH
 //
 //  Created by Faizal Hudya Rizfianto on 22/04/22.
-
+//  Best build & run on Ipad Pro 11 inch
 
 //  For Creating Shape like oval and square
 
@@ -99,7 +99,7 @@ struct DesignView: View {
             HStack {
                 Text("Color: ")
                 RoundedRectangle(cornerRadius: 5)
-                    .foregroundColor(.yellow)
+                    .foregroundColor(.orange)
                     .frame(width: 125/2, height: 65/2)
                     .gesture(tapGesture1)
                 

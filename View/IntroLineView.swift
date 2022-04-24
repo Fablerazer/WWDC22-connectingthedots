@@ -3,7 +3,7 @@
 //  WWDC2022 FaizalH
 //
 //  Created by Faizal Hudya Rizfianto on 22/04/22.
-
+//  Best build & run on Ipad Pro 11 inch
 
 // Connecting the dot
 
@@ -52,6 +52,15 @@ struct IntroConnectingLine: View {
                     .foregroundColor(.black)
                     .padding(.top,5)
                 
+                //  Best build & run on Ipad Pro 11 inch
+                Text("Best build setting on Ipad Pro 11 inch")
+                    .multilineTextAlignment(.center)
+                    .font(.body.bold())
+                    .foregroundColor(.black)
+                    .padding(.top,3)
+                
+                
+                // Illustration of Connecting the dots...
                 ZStack{
                     
                     // First Circle
@@ -142,7 +151,7 @@ struct IntroConnectingLine: View {
             )
             .overlay(
                 VStack{
-                    Text("You can create a line by dragging your finger\non the screen")
+                    Text("You can create a line by dragging your finger\nacross the screen")
                         .multilineTextAlignment(.center)
                         .font(.title.bold())
                         .foregroundColor(.black)
