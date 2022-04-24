@@ -35,7 +35,8 @@ struct StoryView: View {
                             .frame(width: getScreenBounds().width - 100*2, height: getScreenBounds().width - 100*5)
                             // small screen adoption...
                             .scaleEffect(getScreenBounds().height < 750 ? 0.8 : 1)
-                            .scaleEffect(getScreenBounds().height > 1200 ? 0.5 : 1)
+                            .scaleEffect(getScreenBounds().height > 2000 ? 0.5 : 1)
+                            .scaleEffect(getScreenBounds().height < 1700 ? 0.7 : 1)
                             .offset(y: getScreenBounds().height < 750 ? +10 : +20)
                         
                         VStack(alignment: .center, spacing: 12){
@@ -43,7 +44,9 @@ struct StoryView: View {
                             Text(screen.description)
                                 .font(.system(Font.TextStyle.title, design: .rounded))
                                 .fontWeight(.semibold)
-                                .foregroundColor(.black)
+                                .foregroundColor(
+                                    Color("text\(getIndex() + 1)")
+                                )
                                 .multilineTextAlignment(.center)
                                 .padding(EdgeInsets(top: 0, leading: 80, bottom: 70, trailing: 80))
                         }
@@ -67,9 +70,9 @@ struct StoryView: View {
                 .frame(width: getScreenBounds().width - 100,height:
                         getScreenBounds().width - 100)
                 .scaleEffect(2)
-                .rotationEffect(.init(degrees: 20))
+                .rotationEffect(.init(degrees: 33))
                 .rotationEffect(.init(degrees: getRotation()))
-                .offset(y: -getScreenBounds().width - 140)
+                .offset(y: -getScreenBounds().width - 240)
             
             ,alignment: .leading
         )
@@ -86,35 +89,35 @@ struct StoryView: View {
             VStack{
                 
                 // Bottom Content...
+                
+                
                 HStack(spacing: 25){
-                    
                     // Game1 Button...
-                    Button{
-                        
-                    } label: {
-                        Text("Game 1")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.black)
-                            .padding(.vertical,20)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white,in:
-                                RoundedRectangle(cornerRadius: 12))
+                        NavigationLink(destination: IntroConnectingLine(), label:{
+                            Text("Next Page")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.blue)
+                                .padding(.vertical,20)
+                                .frame(maxWidth: .infinity)
+                                .background(Color.white,in:
+                                                RoundedRectangle(cornerRadius: 12))
+                            
+                        })
                     
-                    }
                     
                     // Game2 Button...
-                    Button{
-                    
-                    } label: {
-                        Text("Game 2")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.black)
-                            .offset(x: -5)
-                            .padding(.vertical,20)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white,in:
-                                RoundedRectangle(cornerRadius: 12))
-                    }
+//                    Button{
+//
+//                    } label: {
+//                        Text("Game 2")
+//                            .fontWeight(.semibold)
+//                            .foregroundColor(.black)
+//                            .offset(x: -5)
+//                            .padding(.vertical,20)
+//                            .frame(maxWidth: .infinity)
+//                            .background(Color.white,in:
+//                                RoundedRectangle(cornerRadius: 12))
+//                    }
                         
                 }
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))

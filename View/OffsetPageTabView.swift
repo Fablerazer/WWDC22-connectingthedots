@@ -27,11 +27,14 @@ struct OffsetPageTabView<Content: View>: UIViewRepresentable {
         
         let scrollview = UIScrollView()
         
+        let labelview = UILabel()
+        
         let hostview = UIHostingController(rootView: content)
         hostview.view.translatesAutoresizingMaskIntoConstraints = false
         
         // Clearing BG...
         hostview.view.backgroundColor = .clear
+        labelview.textColor = UIColor.clear
         
         let constraints = [
             

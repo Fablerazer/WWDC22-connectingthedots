@@ -37,7 +37,7 @@ struct ConnectingLine: View {
     
     var body: some View {
         VStack {
-            Text("Touch and drag to make a line")
+            Text("Touch and drag to draw a line")
             Spacer()
             
             Canvas { context, size in
@@ -62,7 +62,7 @@ struct ConnectingLine: View {
                 let newPoint = value.location
                 
                 if value.translation.width + value.translation.height == 0 {
-                    lines.append(Line(points: [newPoint], color: Color.red, lineWidth: 5))
+                    lines.append(Line(points: [newPoint], color: Color.orange, lineWidth: 5))
                 }else{
                     let index = lines.count - 1
                     lines[index].points.append(newPoint)

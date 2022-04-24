@@ -13,13 +13,6 @@ struct ContentView: View {
         
         StoryView()
     }
-//    var body: some View {
-//        NavigationView {
-//            StoryPageView(story: story, pageIndex: 0)
-//        }
-//        .navigationViewStyle(.stack)
-//
-//    }
 }
 
 struct ContentView_Previews: PreviewProvider {

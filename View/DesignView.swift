@@ -119,22 +119,6 @@ struct DesignView: View {
             Spacer()
                 .frame(height: 20)
             
-//            VStack(alignment: .center) {
-//              ForEach(data, id: \.description) { items in
-//                  Button(action: {}){
-//                    Text(items)
-//                      .font(.title)
-//                      .bold()
-//                      .foregroundColor(Color.blue)
-//                      .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-//                      .background(Color(red: 234 / 255.0, green: 240 / 255.0, blue: 241 / 255.0))
-//
-//                      }
-//                  }
-//                }
-//              }
-//
-//        }
         }
         .navigationTitle("Tap & Drag")
         .toolbar {
