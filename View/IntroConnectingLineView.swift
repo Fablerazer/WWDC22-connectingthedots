@@ -48,12 +48,50 @@ struct IntroConnectingLine: View {
                     .foregroundColor(.black)
                     .padding(.top,5)
                 
+                ZStack{
+                    Circle()
+                        .inset(by: 10)
+                        .stroke(Color.orange, lineWidth: 5)
+                        .frame(width: 50, height: 50)
+                        .offset(x:-250, y:340)
+                    
+                    Text("Start")
+                        .font(.title.bold())
+                        .foregroundColor(.black)
+                        .padding(.top,5)
+                        .offset(x:-250, y:380)
+                    
+                    Circle()
+                        .inset(by: 10)
+                        .stroke(Color.orange, lineWidth: 5)
+                        .frame(width: 25, height: 25)
+                        .offset(x:-250, y:340)
+                    
+                    Circle()
+                        .inset(by: 10)
+                        .stroke(Color.blue, lineWidth: 5)
+                        .frame(width: 50, height: 50)
+                        .offset(x:250, y:340)
+                    
+                    Text("End")
+                        .font(.title.bold())
+                        .foregroundColor(.black)
+                        .padding(.top,5)
+                        .offset(x:250, y:380)
+                    
+                    Circle()
+                        .inset(by: 10)
+                        .stroke(Color.blue, lineWidth: 5)
+                        .frame(width: 25, height: 25)
+                        .offset(x:250, y:340)
+                }
+                
                 Path { path in
                     path.move(to: lineStart)
                     path.addLine(to: lineEnd)
                 }
                 .stroke(Color.orange, lineWidth: 8.0)
-                .contentShape(Rectangle())
+                .contentShape(RoundedRectangle(cornerRadius: 12))
                 .gesture(lineDrawingGesture)
             }
             .background(
@@ -79,7 +117,7 @@ struct IntroConnectingLine: View {
                     NavigationLink(destination: StoryView(level: 2)) {
                         Text("Start")
                             .font(.title2.bold())
-                            .foregroundColor(.orange)
+                            .foregroundColor(.white)
                             .padding(.vertical, 20)
                             .frame(width: 200)
                             .background(Color.black,in:

@@ -14,6 +14,7 @@ struct StoryView: View {
     let level:Int
     
     @State var offset: CGFloat = 0
+    @State var show = false
     
     var body: some View {
         
@@ -96,7 +97,7 @@ struct StoryView: View {
                 
                 HStack(spacing: 25){
                     // Game1 Button...
-                    NavigationLink(destination: DesignView(), label:{
+                    NavigationLink(destination: ConnectingLine(level: 3), label:{
                         Text("Next Page")
                             .fontWeight(.semibold)
                             .foregroundColor(.blue)

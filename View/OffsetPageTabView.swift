@@ -84,8 +84,8 @@ struct OffsetPageTabView<Content: View>: UIViewRepresentable {
     }
 }
 
-struct OffsetPageTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct OffsetPageTabView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

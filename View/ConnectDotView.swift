@@ -18,13 +18,21 @@ struct Line {
 }
 
 struct ConnectingLine: View {
+    @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var appState: AppState
+    let level:Int
+    
     @State private var lines = [Line]()
     @State private var selectedColor: Color = .black
     @State private var selectedLineWidth: CGFloat = 1
     
     var body: some View {
         VStack {
-            Text("Touch and drag to draw a line")
+            
+            HStack{
+                Text("Touch and drag to draw a line")
+                    .font(.title)
+            }
             Spacer()
             
             Canvas { context, size in
@@ -48,18 +56,20 @@ struct ConnectingLine: View {
                 }
             }))
         }
-        .navigationTitle("Line Drawing")
-        .toolbar {
-            Button("Reset") {
-                // lineStart = .zero
-                // lineEnd = .zero
+        .overlay(
+            Button(action:{ lines = [Line]() }){
+                Text("Reset")
+                    .font(.title)
             }
-        }
+                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 50))
+            ,alignment: .topTrailing
+        )
+        
     }
 }
 
 struct ConnectingLine_Previews: PreviewProvider {
     static var previews: some View {
-        ConnectingLine()
+        ConnectingLine(level: 3)
     }
 }
