@@ -27,14 +27,14 @@ struct OffsetPageTabView<Content: View>: UIViewRepresentable {
         
         let scrollview = UIScrollView()
         
-        let labelview = UILabel()
+        //        let labelview = UILabel()
         
         let hostview = UIHostingController(rootView: content)
         hostview.view.translatesAutoresizingMaskIntoConstraints = false
         
         // Clearing BG...
         hostview.view.backgroundColor = .clear
-        labelview.textColor = UIColor.clear
+        //        labelview.textColor = UIColor.clear
         
         let constraints = [
             
@@ -66,7 +66,6 @@ struct OffsetPageTabView<Content: View>: UIViewRepresentable {
             
             uiView.setContentOffset(CGPoint(x: offset, y:0), animated: true)
         }
-        
     }
     
     class Coordinator: NSObject,UIScrollViewDelegate{

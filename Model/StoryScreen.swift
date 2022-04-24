@@ -11,13 +11,13 @@ import SwiftUI
 struct StoryScreen: Identifiable {
     var id = UUID().uuidString
     var image: String
+    //    var uicolor: String
     var title: String
     var chapter: String
     var description: String
 }
 
 let title = "Connecting The Dots"
-let chapter = "Chapter 1"
 
 var storyScreens: [StoryScreen] = [
     StoryScreen(image: "MainCharacter", title: title, chapter: "Introduction", description: "Hello, Faizal Here!\n\nRecently, My best friend had an issue with his life, his focus and his studies\n\nPreviously I had the same problem as he is\n\nhe doesn't know what his life mission is, where he wanted to go, what's his purpose, where his future would be"),

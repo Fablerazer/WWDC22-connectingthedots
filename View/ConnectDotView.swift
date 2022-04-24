@@ -15,25 +15,12 @@ struct Line {
     var points: [CGPoint]
     var color: Color
     var lineWidth: CGFloat
-    }
+}
 
 struct ConnectingLine: View {
-//    @State var lineStart = CGPoint.zero
-//    @State var lineEnd = CGPoint.zero
     @State private var lines = [Line]()
     @State private var selectedColor: Color = .black
     @State private var selectedLineWidth: CGFloat = 1
-    
-//    var lineDrawingGesture: some Gesture {
-//        DragGesture()
-//            .onChanged { value in
-//                lineStart = value.startLocation
-//                lineEnd = value.location
-//            }
-//            .onEnded { value in
-//                lineEnd = value.location
-//            }
-//    }
     
     var body: some View {
         VStack {
@@ -41,22 +28,14 @@ struct ConnectingLine: View {
             Spacer()
             
             Canvas { context, size in
-            
+                
                 for line in lines {
-                
-                var path = Path()
-                path.addLines(line.points)
-                
+                    
+                    var path = Path()
+                    path.addLines(line.points)
+                    
                     context.stroke(path, with: .color(line.color), lineWidth: line.lineWidth)
                 }
-            
-//            Path { path in
-//                path.move(to: lineStart)
-//                path.addLine(to: lineEnd)
-//            }
-//            .stroke(Color.green, lineWidth: 8.0)
-//            .contentShape(Rectangle())
-//            .gesture(lineDrawingGesture)
             }
             .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged({ value in
                 let newPoint = value.location
@@ -72,8 +51,8 @@ struct ConnectingLine: View {
         .navigationTitle("Line Drawing")
         .toolbar {
             Button("Reset") {
-//                lineStart = .zero
-//                lineEnd = .zero
+                // lineStart = .zero
+                // lineEnd = .zero
             }
         }
     }

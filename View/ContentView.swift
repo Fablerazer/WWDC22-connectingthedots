@@ -8,12 +8,19 @@
 import Foundation
 import SwiftUI
 
+//final class AppState : ObservableObject{
+//    @Published var rootViewId = UUID()
+//}
+
 struct ContentView: View {
+    @EnvironmentObject var appState: AppState
+    
     var body: some View {
-        
-        StoryView()
+        IntroConnectingLine()
+            .id(appState.rootViewId)
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

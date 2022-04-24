@@ -9,7 +9,12 @@ import Foundation
 import SwiftUI
 
 struct StoryView: View {
+    @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var appState: AppState
+    let level:Int
+    
     @State var offset: CGFloat = 0
+    
     var body: some View {
         
         // Custom View
@@ -33,20 +38,18 @@ struct StoryView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: getScreenBounds().width - 100*2, height: getScreenBounds().width - 100*5)
-                            // small screen adoption...
+                        // small screen adoption...
                             .scaleEffect(getScreenBounds().height < 750 ? 0.8 : 1)
                             .scaleEffect(getScreenBounds().height > 2000 ? 0.5 : 1)
                             .scaleEffect(getScreenBounds().height < 1700 ? 0.7 : 1)
                             .offset(y: getScreenBounds().height < 750 ? +10 : +20)
                         
                         VStack(alignment: .center, spacing: 12){
-                        
+                            
                             Text(screen.description)
                                 .font(.system(Font.TextStyle.title, design: .rounded))
                                 .fontWeight(.semibold)
-                                .foregroundColor(
-                                    Color("text\(getIndex() + 1)")
-                                )
+                                .foregroundColor(Color.black)
                                 .multilineTextAlignment(.center)
                                 .padding(EdgeInsets(top: 0, leading: 80, bottom: 70, trailing: 80))
                         }
@@ -63,7 +66,7 @@ struct StoryView: View {
         }
         // Animation...
         .background(
-        
+            
             RoundedRectangle(cornerRadius: 50)
                 .fill(.black)
             // Size as image size...
@@ -72,7 +75,7 @@ struct StoryView: View {
                 .scaleEffect(2)
                 .rotationEffect(.init(degrees: 33))
                 .rotationEffect(.init(degrees: getRotation()))
-                .offset(y: -getScreenBounds().width - 240)
+                .offset(y: -getScreenBounds().width - 220)
             
             ,alignment: .leading
         )
@@ -93,32 +96,32 @@ struct StoryView: View {
                 
                 HStack(spacing: 25){
                     // Game1 Button...
-                        NavigationLink(destination: IntroConnectingLine(), label:{
-                            Text("Next Page")
-                                .fontWeight(.semibold)
-                                .foregroundColor(.blue)
-                                .padding(.vertical,20)
-                                .frame(maxWidth: .infinity)
-                                .background(Color.white,in:
-                                                RoundedRectangle(cornerRadius: 12))
-                            
-                        })
+                    NavigationLink(destination: DesignView(), label:{
+                        Text("Next Page")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.blue)
+                            .padding(.vertical, 20)
+                            .frame(width: 215)
+                            .background(Color.white,in:
+                                            RoundedRectangle(cornerRadius: 12))
+                        
+                    })
                     
                     
                     // Game2 Button...
-//                    Button{
-//
-//                    } label: {
-//                        Text("Game 2")
-//                            .fontWeight(.semibold)
-//                            .foregroundColor(.black)
-//                            .offset(x: -5)
-//                            .padding(.vertical,20)
-//                            .frame(maxWidth: .infinity)
-//                            .background(Color.white,in:
-//                                RoundedRectangle(cornerRadius: 12))
-//                    }
-                        
+                    //                    Button{
+                    //
+                    //                    } label: {
+                    //                        Text("Game 2")
+                    //                            .fontWeight(.semibold)
+                    //                            .foregroundColor(.black)
+                    //                            .offset(x: -5)
+                    //                            .padding(.vertical,20)
+                    //                            .frame(maxWidth: .infinity)
+                    //                            .background(Color.white,in:
+                    //                                RoundedRectangle(cornerRadius: 12))
+                    //                    }
+                    
                 }
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 
@@ -130,7 +133,7 @@ struct StoryView: View {
                     } label: {
                         Text("Skip")
                             .fontWeight(.semibold)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.clear)
                     }
                     
                     // Indicators...
@@ -149,9 +152,9 @@ struct StoryView: View {
                     // Next Button...
                     Button{
                         // Setting Mac Offset...
-                        // max 4 screens(3*width)...
+                        // max 7 screens(6*width)...
                         offset = min(offset +
-                                     getScreenBounds().width,getScreenBounds().width * 3)
+                                     getScreenBounds().width,getScreenBounds().width * 6)
                     } label: {
                         Text("Next")
                             .fontWeight(.semibold)
@@ -161,7 +164,7 @@ struct StoryView: View {
                 .padding(.top,30)
                 .padding(.horizontal,28)
             }
-            .padding(.top,20)
+                .padding(.top,20)
             ,alignment: .bottom
         )
     }
@@ -186,7 +189,7 @@ struct StoryView: View {
 
 struct StoryView_Previews: PreviewProvider {
     static var previews: some View {
-        StoryView()
+        StoryView( level: 2)
     }
 }
 

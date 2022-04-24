@@ -16,8 +16,8 @@ struct DesignView: View {
     @State private var color2 : Color = Color.primary
     @State private var sizeIndex = 0
     
-//    let data = [["Font","Shape"],
-//                ["Size"]]
+    //    let data = [["Font","Shape"],
+    //                ["Size"]]
     
     private var sizes: [CGSize] = [
         CGSize(width: 150, height: 80),
@@ -68,7 +68,7 @@ struct DesignView: View {
                                 height: value.startLocation.y + value.translation.height - 50)
             }
     }
-
+    
     var body: some View {
         VStack {
             Text("Create your own design!")
@@ -99,28 +99,27 @@ struct DesignView: View {
             HStack {
                 Text("Color: ")
                 RoundedRectangle(cornerRadius: 5)
-                .foregroundColor(.yellow)
-                .frame(width: 125/2, height: 65/2)
-                .gesture(tapGesture1)
-            
+                    .foregroundColor(.yellow)
+                    .frame(width: 125/2, height: 65/2)
+                    .gesture(tapGesture1)
+                
                 RoundedRectangle(cornerRadius: 5)
-                .foregroundColor(.purple)
-                .frame(width: 125/2, height: 65/2)
-                .gesture(tapGesture2)
+                    .foregroundColor(.purple)
+                    .frame(width: 125/2, height: 65/2)
+                    .gesture(tapGesture2)
             }
             
             HStack{
                 Text("Shape: ")
                 RoundedRectangle(cornerRadius: 5)
-                .foregroundColor(.red)
-                .frame(width: 125/2, height: 65/2)
-                .gesture(tapGesture3)
+                    .foregroundColor(.red)
+                    .frame(width: 125/2, height: 65/2)
+                    .gesture(tapGesture3)
             }
             Spacer()
                 .frame(height: 20)
             
         }
-        .navigationTitle("Tap & Drag")
         .toolbar {
             Button("Reset") {
                 color1 = Color.primary
@@ -129,7 +128,7 @@ struct DesignView: View {
                 sizeIndex = 0
             }
         }
-    
+        
     }
 }
 
