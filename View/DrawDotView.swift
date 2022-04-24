@@ -132,6 +132,19 @@ struct ConnectingLine: View {
             }
             .offset(y:-100)
         }
+        .background(
+            
+            RoundedRectangle(cornerRadius: 50)
+                .fill(.black)
+            // Size as image size...
+                .frame(width: getScreenBounds().width - 100,height:
+                        getScreenBounds().width - 100)
+                .scaleEffect(2)
+                .rotationEffect(.init(degrees: 33))
+                .offset(x: getScreenBounds().width - 0, y: -getScreenBounds().width - 220)
+            
+            ,alignment: .leading
+        )
         .overlay(
             HStack{
                 Button(action:{ lines = [Line]() }){

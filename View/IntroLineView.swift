@@ -53,7 +53,7 @@ struct IntroConnectingLine: View {
                     .padding(.top,5)
                 
                 //  Best build & run on Ipad Pro 11 inch
-                Text("Best build setting on Ipad Pro 11 inch")
+                Text("Best build setting on Ipad Pro 11 & 12.9 inch")
                     .multilineTextAlignment(.center)
                     .font(.body.bold())
                     .foregroundColor(.black)
@@ -71,7 +71,7 @@ struct IntroConnectingLine: View {
                         .offset(x:-250, y:240)
                     
                     Text("Start")
-                        .font(.title.bold())
+                        .font(.title2.bold())
                         .foregroundColor(.black)
                         .padding(.top,5)
                         .offset(x:-250, y:280)
@@ -116,7 +116,7 @@ struct IntroConnectingLine: View {
                         .offset(x:250, y:240)
                     
                     Text("End")
-                        .font(.title.bold())
+                        .font(.title2.bold())
                         .foregroundColor(.black)
                         .padding(.top,5)
                         .offset(x:250, y:280)

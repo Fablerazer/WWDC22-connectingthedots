@@ -14,12 +14,19 @@ struct DesignView: View {
     @State private var offset = CGSize.zero
     @State private var color1 : Color = Color.primary
     @State private var color2 : Color = Color.primary
-    @State private var sizeIndex = 0
+    @State var sizeIndex = 0
+    
+    @State var showNavigation: Bool = false
+    @State var showReading: Bool = true
+    
+    @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var appState: AppState
+    let level:Int
     
     //    let data = [["Font","Shape"],
     //                ["Size"]]
     
-    private var sizes: [CGSize] = [
+    var sizes: [CGSize] = [
         CGSize(width: 150, height: 80),
         CGSize(width: 200, height: 60),
         CGSize(width: 50, height: 70),
@@ -119,7 +126,47 @@ struct DesignView: View {
             Spacer()
                 .frame(height: 20)
             
+            VStack(){
+                
+                // Game1 Button...
+                if showNavigation == false {
+                    
+                    Button("Done Drawing?"){
+                        showNavigation.toggle()
+                        showReading.toggle()
+                    }
+                    .font(.title2.bold())
+                    .padding()
+                }
+                
+                if showNavigation == true {
+                    
+                    NavigationLink(destination: StoryView3(level: 6)) {
+                        Text("Next Page")
+                            .font(.title2.bold())
+                            .foregroundColor(.white)
+                            .padding(.vertical, 20)
+                            .frame(width: 200)
+                            .background(Color.black,in:
+                                            RoundedRectangle(cornerRadius: 12))
+                    }
+                }
+            }
+//            .offset(y:-100)
         }
+        .background(
+            
+            RoundedRectangle(cornerRadius: 50)
+                .fill(.black)
+            // Size as image size...
+                .frame(width: getScreenBounds().width - 100,height:
+                        getScreenBounds().width - 100)
+                .scaleEffect(2)
+                .rotationEffect(.init(degrees: 33))
+                .offset(x: getScreenBounds().width - 0, y: -getScreenBounds().width - 220)
+            
+            ,alignment: .leading
+        )
         .toolbar {
             Button("Reset") {
                 color1 = Color.primary
@@ -134,7 +181,7 @@ struct DesignView: View {
 
 struct DesignView_Previews: PreviewProvider {
     static var previews: some View {
-        DesignView()
+        DesignView(level: 5)
     }
 }
 

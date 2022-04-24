@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct StoryView2: View {
+struct StoryView3: View {
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var appState: AppState
     let level:Int
@@ -116,16 +116,18 @@ struct StoryView2: View {
                         // Game1 Button...
                         if showNavigation == true {
 
-                            NavigationLink(destination: DesignView(level: 5), label:{
-                                Text("Next Page")
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.white)
-                                    .padding(.vertical, 20)
-                                    .frame(width: 215)
-                                    .background(Color.black,in:
-                                                    RoundedRectangle(cornerRadius: 12))
-                                
-                            })
+                            Button(action: {
+                                appState.rootViewId = UUID()
+                            }, label:{
+                                    Text("Back to main page")
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.white)
+                                        .padding(.vertical, 20)
+                                        .frame(width: 215)
+                                        .background(Color.black,in:
+                                                        RoundedRectangle(cornerRadius: 12))
+                                    
+                                })
                         }
                     }
 //                    .navigationBarHidden(getIndex() == 7)
@@ -195,9 +197,9 @@ struct StoryView2: View {
     }
 }
 
-struct StoryView2_Previews: PreviewProvider {
+struct StoryView3_Previews: PreviewProvider {
     static var previews: some View {
-        StoryView2( level: 4)
+        StoryView3( level: 6)
     }
 }
 

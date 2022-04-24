@@ -2,11 +2,12 @@ import SwiftUI
 
 @main
 struct StoryApp: App {
-    @ObservedObject var appState = AppState()
+//    @ObservedObject var appState = AppState()
+    @StateObject var appState = AppState()
     
     var body: some Scene {
         WindowGroup {
-            IntroConnectingLine()
+            ContentView()
                 .environmentObject(appState)
         }
     }
