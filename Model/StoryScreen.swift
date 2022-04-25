@@ -21,14 +21,14 @@ struct StoryScreen: Identifiable {
 let title = "Connecting The Dots"
 
 var storyScreens: [StoryScreen] = [
-    StoryScreen(image: "MainCharacter", title: title, chapter: "Introduction", description: "Hello, Faizal Here!\n\nI'm from Indonesia\nIf you don't know where it is\nBali is the word for you 😅\n\nI love to build something, especially about design, tech, and startup related\nI'm also interested in finance and music"),
+    StoryScreen(image: "MainCharacter", title: title, chapter: "Introduction", description: "Hello, Faizal Here!\n\nI'm from Indonesia\nIf you don't know where it is\nBali is the word for you 😅\n\nI love to build & create something, especially about design, tech, and startup related\n\nI'm also interested in finance and music"),
     StoryScreen(image: "1", title: title, chapter: "Introduction", description: "In the past, i had a problem with my life purpose. \n\nIt's like i don't have an image about what i want to become in the future, \n\nNot doing something new, stay's the same as before, procrastinating all the time\n\n📉📉📉"),
     StoryScreen(image: "11", title: title, chapter: "Introduction", description: "meaningless experience to another meaningless experience\n\njust doing the bare minimum, not putting more effort into something\n\nand all of that causing me to absorb a lot of negative energy back then\n\n🪫🪫🪫"),
     StoryScreen(image: "13", title: "It's dark and empty\nI feel hopeless", chapter: "I'm asking to myself\nwhy I should live in this world?\nwhat is my purpose?", description: "To someone who read this, Have a wonderful day!!!"),
     StoryScreen(image: "12", title: title, chapter: "Introduction", description: "But recently i was knew that i'm not alone\n\nnot too long ago my best friend opened up to me about his deepest fear. \n\nAnd shockingly a lot of his friends too had the same problem from what i had been through in the past\n\n🎗🎗🎗"),
     StoryScreen(image: "4", title: title, chapter: "Introduction", description: "Because I know what it feels like when having that exact kind of problem, \n\nSo I wanna help them to rise up! \n\nAnd persuade them be the best version of themselves\n\n💪💪💪"),
     StoryScreen(image: "2", title: title, chapter: "Introduction", description: "First of all we have to start from the past\n\nWhy can we be the person we are today?\n\nWhat is the causality?\n\nAnd how we can improve what we have within us and boost it to our own benefit\n\n⚡️⚡️⚡️"),
-    StoryScreen(image: "7", title: title, chapter: "Introduction", description: "Also this method is used by founder of Apple `Steve Jobs`\n\nIt's called 'connecting the dots'\n\nbut before that i want you to do a minigames that's literally about connecting the dots 😅\n\nWhen you're ready, Click the button below!\n\n⚡️⚡️⚡️"),
+    StoryScreen(image: "7", title: title, chapter: "Introduction", description: "Also this method is used by founder of Apple 'Steve Jobs'\n\nIt's called 'Connecting The Dots'\n\nbut before that i want you to do a minigames that's literally about connecting the dots 😅\n\nWhen you're ready\nClick the button below!\n\n⚡️⚡️⚡️"),
     
     
     

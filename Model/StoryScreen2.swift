@@ -21,9 +21,10 @@ struct StoryScreen2: Identifiable {
 let title2 = "Connecting The Dots"
 
 var storyScreens2: [StoryScreen2] = [
-    StoryScreen2(image2: "MainCharacter", title2: title2, chapter2: "Introduction", description2: "Hello, Faizal Here!\n\nI'm from Indonesia\nIf you don't know where it is\nBali is the word for you 😅\n\nI love to build something, especially about design, tech, and startup related\nI'm also interested in finance and music"),
-    StoryScreen2(image2: "1", title2: title2, chapter2: "Introduction", description2: "In the past, i had a problem with my life purpose. \n\nIt's like i don't have an image about what i want to become in the future, \n\nNot doing something new, stay's the same as before, procrastinating all the time\n\n📉📉📉"),
-    StoryScreen2(image2: "11", title2: title2, chapter2: "Introduction", description2: "meaningless experience to another meaningless experience\n\njust doing the bare minimum, not putting more effort into something\n\nand all of that causing me to absorb a lot of negative energy back then\n\n🪫🪫🪫"),
+    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Introduction", description2: "The phrase all roads lead to Rome means that there are various ways to reach a conclusion, many ways to achieve a goal, and many routes to arrive at a decision. The idea is that there are many methods to accomplish something, all leading to the same result"),
+    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Introduction", description2: "it's a puzzle that we have to solve our own, everybody's puzzle is different"),
+    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Introduction", description2: "''You have to trust that the dots will somehow connect in your future, because believing that the dots will connect down the road, will give you the confidence to follow your heart. Even when it leads you off the worn path, and that will make all the difference''"),
+    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Introduction", description2: "From 3 of the most focused thing that i grind about, one of them is about design and i want to give you the example and share with you how i cope with this problem"),
     
     
     
@@ -58,12 +59,15 @@ var storyScreens2: [StoryScreen2] = [
     
     //  but before that i want you to do a minigames that's literally about connecting the dots 😅
     
+//    The phrase all roads lead to Rome means that there are various ways to reach a conclusion, many ways to achieve a goal, and many routes to arrive at a decision. The idea is that there are many methods to accomplish something, all leading to the same result
     
+//    (DrawDotView) it's a puzzle that we have to solve our own, everybody's puzzle is different
     
     
     // ''You have to trust that the dots will somehow connect in your future, because believing that the dots will connect down the road, will give you the confidence to follow your heart. Even when it leads you off the worn path, and that will make all the difference''
     
     //  From 3 of the most focused thing that i grind about, one of them is about design and i want to give you the example and share with you how i cope with this problem
+    
     
     // ''You can't connect the dots by looking forward, you can only connect them by looking backwards''
     //

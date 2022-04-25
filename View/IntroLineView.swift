@@ -159,7 +159,7 @@ struct IntroConnectingLine: View {
                     
                     if showNavigation == false {
                         
-                        Button("Done Drawing?"){
+                        Button("Done Drawing? Click Me!"){
                             showNavigation.toggle()
                             showReading.toggle()
                         }

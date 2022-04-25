@@ -120,14 +120,16 @@ struct StoryView3: View {
                         // NavigationLink...
                         if showNavigation == true {
 
-                            NavigationLink(destination: ConnectingLine(level: 3), label:{
-                                Text("Next Page")
-                                    .fontWeight(.semibold)
+                            Button(action: {
+                                appState.rootViewId = UUID()
+                            }, label:{
+                                Text("Back to main page")
+                                    .fontWeight(.bold)
                                     .foregroundColor(.white)
                                     .padding(.vertical, 20)
                                     .frame(width: 215)
-                                    .background(Color.black,in:
-                                                    RoundedRectangle(cornerRadius: 12))
+                                    .background(Color.orange,in:
+                                                RoundedRectangle(cornerRadius: 12))
                                 
                             })
                         }

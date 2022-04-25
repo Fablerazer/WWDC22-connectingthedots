@@ -52,7 +52,7 @@ struct StoryView2: View {
                         Image(screen.image2)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: getScreenBounds().width - 100*2, height: getScreenBounds().width - 100*5)
+                            .frame(width: getScreenBounds().width - 100*2, height: getScreenBounds().width - 100*4)
                         // small screen adoption...
                             .scaleEffect(getScreenBounds().height < 750 ? 0.8 : 1)
                             .scaleEffect(getScreenBounds().height > 2000 ? 0.5 : 1)
@@ -120,7 +120,7 @@ struct StoryView2: View {
                         // NavigationLink...
                         if showNavigation == true {
 
-                            NavigationLink(destination: ConnectingLine(level: 3), label:{
+                            NavigationLink(destination: DesignView(level: 5), label:{
                                 Text("Next Page")
                                     .fontWeight(.semibold)
                                     .foregroundColor(.white)

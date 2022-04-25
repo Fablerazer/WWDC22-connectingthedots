@@ -35,7 +35,7 @@ struct ConnectingLine: View {
             Text("Connect The Dots!")
                 .font(.title)
                 .padding(.top,50)
-            Text("1. Touch and drag to draw a line\n2. Don't let the line overlap by itself or onto the another line")
+            Text("1. Touch and drag to draw a line\n2. Don't let the line overlap by itself or onto the another line\n3. You have to connect to the same color as the line and the circle")
                 .font(.callout)
                 .multilineTextAlignment(.center)
                 .padding(10)
