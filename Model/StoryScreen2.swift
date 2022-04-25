@@ -21,10 +21,12 @@ struct StoryScreen2: Identifiable {
 let title2 = "Connecting The Dots"
 
 var storyScreens2: [StoryScreen2] = [
-    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Introduction", description2: "The phrase all roads lead to Rome means that there are various ways to reach a conclusion, many ways to achieve a goal, and many routes to arrive at a decision. The idea is that there are many methods to accomplish something, all leading to the same result"),
-    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Introduction", description2: "it's a puzzle that we have to solve our own, everybody's puzzle is different"),
-    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Introduction", description2: "''You have to trust that the dots will somehow connect in your future, because believing that the dots will connect down the road, will give you the confidence to follow your heart. Even when it leads you off the worn path, and that will make all the difference''"),
-    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Introduction", description2: "From 3 of the most focused thing that i grind about, one of them is about design and i want to give you the example and share with you how i cope with this problem"),
+    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Chapter 1", description2: "🎉Congrats!!🎉 \n\nYou have passed the first mini game\n\nThis picture is explaining us about various ways to finishing the game\n\nWhat can we learn from this?"),
+    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Chapter 1", description2: "''All roads lead to Rome'' \nmeans that there are various ways to reach a conclusion, many ways to achieve a goal, and many routes to arrive at a decision.\n\nThe idea is that there are many methods to accomplish something, all leading to the same result"),
+    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Introduction", description2: "So, the meaning that I want to share with you is \n\nIt's a puzzle that we have to solve our own, everybody's puzzle is different\n\nThere are many ways to solve and only you who know what's best"),
+    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Chapter 1", description2: "This is a quote that we'll discuss next\n''You have to trust that the dots will somehow connect in your future, because believing that the dots will connect down the road, will give you the confidence to follow your heart. Even when it leads you off the worn path, and that will make all the difference'' Steve Jobs"),
+    StoryScreen2(image2: "Drawing", title2: title2, chapter2: "Chapter 1", description2: "So, from that quotes I want to share with you about my experience on how I can connect the dots to my past\n\nFrom the 3 of my main focus, one of them is about design and i want to give you the example and share with you how I cope with this problem"),
+    StoryScreen2(image2: "2", title2: title2, chapter2: "Chapter 1", description2: "With this other mini games you will learn how to design with your own creation!"),
     
     
     

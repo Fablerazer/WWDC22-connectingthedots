@@ -39,7 +39,7 @@ struct StoryView: View {
                             .font(.largeTitle.bold())
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
-                            .padding(EdgeInsets(top: 70, leading: 80, bottom: 0, trailing: 80))
+                            .padding(EdgeInsets(top: 50, leading: 80, bottom: 0, trailing: 80))
                         
                         Text(screen.chapter)
                             .font(.title.bold())

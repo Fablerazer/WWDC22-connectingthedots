@@ -21,9 +21,12 @@ struct StoryScreen3: Identifiable {
 let title3 = "Connecting The Dots"
 
 var storyScreens3: [StoryScreen3] = [
-    StoryScreen3(image3: "MainCharacter", title3: title3, chapter3: "Introduction", description3: "Hello, Faizal Here!\n\nI'm from Indonesia\nIf you don't know where it is\nBali is the word for you 😅\n\nI love to build something, especially about design, tech, and startup related\nI'm also interested in finance and music"),
-    StoryScreen3(image3: "1", title3: title3, chapter3: "Introduction", description3: "In the past, i had a problem with my life purpose. \n\nIt's like i don't have an image about what i want to become in the future, \n\nNot doing something new, stay's the same as before, procrastinating all the time\n\n📉📉📉"),
-    StoryScreen3(image3: "11", title3: title3, chapter3: "Introduction", description3: "meaningless experience to another meaningless experience\n\njust doing the bare minimum, not putting more effort into something\n\nand all of that causing me to absorb a lot of negative energy back then\n\n🪫🪫🪫"),
+    StoryScreen3(image3: "AppleDesign", title3: title3, chapter3: "Chapter 2", description3: "🎉Good Job!🎉\n\nThis is just an example of various ways to make the design from the tools that has been given\n\nAnd this is why I love design because you create something unique that it comes from yourself, from your thought, idea, etc"),
+    StoryScreen3(image3: "6", title3: title3, chapter3: "Chapter 2", description3: "And my interest about design is strongly influenced by my parents who both are an architect\n\nFrom when I was a little child until now, they teach me how to draw, what kind of design that is categorized as ''A good design'', etc"),
+    StoryScreen3(image3: "2", title3: title3, chapter3: "Chapter 2", description3: "And the other thing about why I love design is\n''Learn to sell, Learn to build, if you can do both you will be unstoppable''\nNaval Ravikant\n\n This is why I learn design, tech, and business\nBy connecting the dots backwards, I knew what I want to be in the future\n\nSo what can we learn from my experience?"),
+    StoryScreen3(image3: "AppleDesign", title3: title3, chapter3: "Chapter 2", description3: "Again.\n''Every one's journey is different, \nso find what truly you and yours only''\n\nIt's a puzzle that we have to solve our own, everybody's puzzle is different\n\n This is my story, so how about yours?"),
+    StoryScreen3(image3: "1", title3: title3, chapter3: "Chapter 2", description3: "''You can't connect the dots by looking forward, you can only connect them by looking backwards''\nSteve Jobs"),
+    StoryScreen3(image3: "14", title3: title3, chapter3: "Chapter 2", description3: "To sum it up\nKnow that we all have challenges, and knowing that they only makes us stronger\n\nConnecting the dots is needing a combination between embracing our past, determination and future vision. Do that and trust everything will work out perfectly in the end\n\n''Stay Hungry, Stay Foolish''"),
     
     
     

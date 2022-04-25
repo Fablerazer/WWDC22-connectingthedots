@@ -46,7 +46,7 @@ struct IntroConnectingLine: View {
                     .foregroundColor(.black)
                     .padding(.top,60)
                 
-                Text("How zooming out through your past\ncan define who you are right now")
+                Text("How tracing back through your past\ncan define who you are right now")
                     .multilineTextAlignment(.center)
                     .font(.title.bold())
                     .foregroundColor(.black)

@@ -39,20 +39,20 @@ struct StoryView2: View {
                             .font(.largeTitle.bold())
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
-                            .padding(EdgeInsets(top: 70, leading: 80, bottom: 0, trailing: 80))
+                            .padding(EdgeInsets(top: 30, leading: 80, bottom: 0, trailing: 80))
                         
                         Text(screen.chapter2)
                             .font(.title.bold())
                             .underline(true, color: .orange)
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
-                            .padding(EdgeInsets(top: 0, leading: 80, bottom: 30, trailing: 80))
+                            .padding(EdgeInsets(top: 0, leading: 80, bottom:-70, trailing: 80))
 
                         
                         Image(screen.image2)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: getScreenBounds().width - 100*2, height: getScreenBounds().width - 100*4)
+                            .frame(width: getScreenBounds().width - 100*2, height: getScreenBounds().width - 100*3)
                         // small screen adoption...
                             .scaleEffect(getScreenBounds().height < 750 ? 0.8 : 1)
                             .scaleEffect(getScreenBounds().height > 2000 ? 0.5 : 1)
@@ -66,7 +66,7 @@ struct StoryView2: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color.black)
                                 .multilineTextAlignment(.center)
-                                .padding(EdgeInsets(top: 0, leading: 80, bottom: 70, trailing: 80))
+                                .padding(EdgeInsets(top: -30, leading: 80, bottom: 70, trailing: 80))
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
                     }
