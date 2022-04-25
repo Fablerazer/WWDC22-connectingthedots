@@ -12,6 +12,9 @@ import SwiftUI
 
 struct DesignView: View {
     @State private var offset = CGSize.zero
+    @State private var offset2 = CGSize.zero
+    @State private var offset3 = CGSize.zero
+    @State private var offset4 = CGSize.zero
     @State private var color1 : Color = Color.primary
     @State private var color2 : Color = Color.primary
     @State var sizeIndex = 0
@@ -76,55 +79,117 @@ struct DesignView: View {
             }
     }
     
+    var dragGesture2: some Gesture {
+        DragGesture()
+            .onChanged { value in
+                offset2 = CGSize(width: value.startLocation.x + value.translation.width - 50,
+                                height: value.startLocation.y + value.translation.height - 50)
+            }
+    }
+    
+    var dragGesture3: some Gesture {
+        DragGesture()
+            .onChanged { value in
+                offset3 = CGSize(width: value.startLocation.x + value.translation.width - 50,
+                                height: value.startLocation.y + value.translation.height - 50)
+            }
+    }
+    
+    var dragGesture4: some Gesture {
+        DragGesture()
+            .onChanged { value in
+                offset4 = CGSize(width: value.startLocation.x + value.translation.width - 50,
+                                height: value.startLocation.y + value.translation.height - 50)
+            }
+    }
+    
     var body: some View {
+        
         VStack {
-            Text("Create your own design!")
-                .font(.title)
-                .padding(.top)
-            Text("1. Use one finger to drag the shape around\n2. Tap the button to randomly change it's colors(purple & yellow) and size <-> shape(red)")
-                .font(.callout)
-                .padding(10)
-            Spacer()
+            Group{
+                Text("Create your own design!")
+                    .font(.title)
+                    .padding(.top,50)
+                Text("1. Use one finger to drag the shape around\n2. Tap the button to randomly change it's colors \n(purple & yellow), size, and shape(red)\n3. Do whatever you like! Release your wild imagination!")
+                    .font(.callout)
+                    .multilineTextAlignment(.center)
+                    .padding(10)
+                Spacer()
+            }
             
-            Text("Apple")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(color1)
-                .padding(10)
+            Group{
+                Text("Apple")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(color1)
+                    .padding(10)
+                
+                // Shape
+                VStack{
+                    HStack{
+                        Spacer()
+                        Capsule()
+                            .inset(by: 10)
+                            .stroke(color2, lineWidth: 5)
+                            .frame(width: sizes[sizeIndex].width, height: sizes[sizeIndex].height)
+                            .offset(offset)
+                            .gesture(dragGesture)
+                        Spacer()
+                        
+                        Triangle()
+                            .stroke(color2, style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))
+                            .frame(width: sizes[sizeIndex].width, height: sizes[sizeIndex].height)
+                            .offset(offset2)
+                            .gesture(dragGesture2)
+                        Spacer()
+                        
+                        Rectangle()
+                            .inset(by: 10)
+                            .stroke(color2, lineWidth: 5)
+                            .frame(width: sizes[sizeIndex].width, height: sizes[sizeIndex].height)
+                            .offset(offset3)
+                            .gesture(dragGesture3)
+                        Spacer()
+                        
+                        Circle()
+                            .inset(by: 10)
+                            .stroke(color2, lineWidth: 5)
+                            .frame(width: sizes[sizeIndex].width, height: sizes[sizeIndex].height)
+                            .offset(offset4)
+                            .gesture(dragGesture4)
+                        Spacer()
+                    }
+                    .padding(.top,200)
+                    .padding(.bottom,100)
+                }
+            }
             
-            
-            // Shape
-            Capsule()
-                .inset(by: 10)
-                .stroke(color2, lineWidth: 5)
-                .frame(width: sizes[sizeIndex].width, height: sizes[sizeIndex].height)
-                .offset(offset)
-                .gesture(dragGesture)
-            Spacer()
             
             // Modifier
-            HStack {
-                Text("Color: ")
-                RoundedRectangle(cornerRadius: 5)
-                    .foregroundColor(.orange)
-                    .frame(width: 125/2, height: 65/2)
-                    .gesture(tapGesture1)
+            Group{
+                HStack {
+                    Text("Color: ")
+                    RoundedRectangle(cornerRadius: 5)
+                        .foregroundColor(.orange)
+                        .frame(width: 125/2, height: 65/2)
+                        .gesture(tapGesture1)
+                    
+                    RoundedRectangle(cornerRadius: 5)
+                        .foregroundColor(.purple)
+                        .frame(width: 125/2, height: 65/2)
+                        .gesture(tapGesture2)
+                }
                 
-                RoundedRectangle(cornerRadius: 5)
-                    .foregroundColor(.purple)
-                    .frame(width: 125/2, height: 65/2)
-                    .gesture(tapGesture2)
+                HStack{
+                    Text("Shape: ")
+                    RoundedRectangle(cornerRadius: 5)
+                        .foregroundColor(.red)
+                        .frame(width: 125/2, height: 65/2)
+                        .gesture(tapGesture3)
+                }
+                Spacer()
+                    .frame(height: 60)
             }
-            
-            HStack{
-                Text("Shape: ")
-                RoundedRectangle(cornerRadius: 5)
-                    .foregroundColor(.red)
-                    .frame(width: 125/2, height: 65/2)
-                    .gesture(tapGesture3)
-            }
-            Spacer()
-                .frame(height: 20)
             
             VStack(){
                 
@@ -152,7 +217,7 @@ struct DesignView: View {
                     }
                 }
             }
-//            .offset(y:-100)
+            .offset(y:-30)
         }
         .background(
             
@@ -176,6 +241,20 @@ struct DesignView: View {
             }
         }
         
+    }
+}
+
+struct Triangle: Shape {
+    func path(in rect: CGRect) -> Path{
+        var path = Path()
+        
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
+        
+        return path
+
     }
 }
 

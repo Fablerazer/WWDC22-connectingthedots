@@ -32,11 +32,13 @@ struct ConnectingLine: View {
     
     var body: some View {
         VStack {
-            
-            HStack{
-                Text("Touch and drag to draw a line")
-                    .font(.title)
-            }
+            Text("Connect The Dots!")
+                .font(.title)
+                .padding(.top,50)
+            Text("1. Touch and drag to draw a line\n2. Tap the button to randomly change it's colors(purple & yellow) and size <-> shape(red)")
+                .font(.callout)
+                .multilineTextAlignment(.center)
+                .padding(10)
             Spacer()
             
             Canvas { context, size in

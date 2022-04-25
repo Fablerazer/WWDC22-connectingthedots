@@ -120,8 +120,8 @@ struct StoryView3: View {
                                 appState.rootViewId = UUID()
                             }, label:{
                                     Text("Back to main page")
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.orange)
                                         .padding(.vertical, 20)
                                         .frame(width: 215)
                                         .background(Color.black,in:
