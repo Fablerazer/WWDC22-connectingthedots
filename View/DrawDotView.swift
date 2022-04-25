@@ -35,7 +35,7 @@ struct ConnectingLine: View {
             Text("Connect The Dots!")
                 .font(.title)
                 .padding(.top,50)
-            Text("1. Touch and drag to draw a line\n2. Tap the button to randomly change it's colors(purple & yellow) and size <-> shape(red)")
+            Text("1. Touch and drag to draw a line\n2. Don't let the line overlap by itself or onto the another line")
                 .font(.callout)
                 .multilineTextAlignment(.center)
                 .padding(10)

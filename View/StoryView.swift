@@ -38,12 +38,16 @@ struct StoryView: View {
                         Text(screen.title)
                             .font(.largeTitle.bold())
                             .foregroundColor(.white)
-                            .padding(.top,80)
+                            .multilineTextAlignment(.center)
+                            .padding(EdgeInsets(top: 70, leading: 80, bottom: 0, trailing: 80))
                         
                         Text(screen.chapter)
                             .font(.title.bold())
                             .underline(true, color: .orange)
                             .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                            .padding(EdgeInsets(top: 0, leading: 80, bottom: 30, trailing: 80))
+
                         
                         Image(screen.image)
                             .resizable()
