@@ -33,19 +33,23 @@ struct StoryView2: View {
             
             HStack(spacing: 0){
                 
-                ForEach(storyScreens){screen in
+                ForEach(storyScreens2){screen in
                     VStack(spacing: 15){
-                        Text(screen.title)
+                        Text(screen.title2)
                             .font(.largeTitle.bold())
                             .foregroundColor(.white)
-                            .padding(.top,80)
+                            .multilineTextAlignment(.center)
+                            .padding(EdgeInsets(top: 70, leading: 80, bottom: 0, trailing: 80))
                         
-                        Text(screen.chapter)
+                        Text(screen.chapter2)
                             .font(.title.bold())
                             .underline(true, color: .orange)
                             .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                            .padding(EdgeInsets(top: 0, leading: 80, bottom: 30, trailing: 80))
+
                         
-                        Image(screen.image)
+                        Image(screen.image2)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: getScreenBounds().width - 100*2, height: getScreenBounds().width - 100*5)
@@ -57,7 +61,7 @@ struct StoryView2: View {
                         
                         VStack(alignment: .center, spacing: 12){
                             
-                            Text(screen.description)
+                            Text(screen.description2)
                                 .font(.system(Font.TextStyle.title, design: .rounded))
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color.black)
@@ -91,12 +95,12 @@ struct StoryView2: View {
             ,alignment: .leading
         )
         .background(
-            Color("screen\(getIndex() + 1)")
+            Color("screen1-\(getIndex() + 1)")
                 .animation(.easeInOut, value: getIndex())
         )
         
         
-        // Ignoring SafeArea for Animation
+        // Ignoring SafeArea for Animation...
         .ignoresSafeArea(.container, edges: .all)
         .overlay(
             
@@ -113,10 +117,10 @@ struct StoryView2: View {
                             }
                             .font(.title2.bold())
                         }
-                        // Game1 Button...
+                        // NavigationLink...
                         if showNavigation == true {
 
-                            NavigationLink(destination: DesignView(level: 5), label:{
+                            NavigationLink(destination: ConnectingLine(level: 3), label:{
                                 Text("Next Page")
                                     .fontWeight(.semibold)
                                     .foregroundColor(.white)
@@ -145,7 +149,7 @@ struct StoryView2: View {
                     
                     // Indicators...
                     HStack(spacing: 8){
-                        ForEach(storyScreens.indices,id: \.self){index in
+                        ForEach(storyScreens2.indices,id: \.self){index in
                             Circle()
                                 .fill(.black)
                                 .opacity(index == getIndex() ? 1 : 0.4)
